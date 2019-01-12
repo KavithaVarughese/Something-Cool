@@ -3,18 +3,18 @@ using System.Collections;
 
 public class EnemyMovement : MonoBehaviour
 {
-    Transform player;
+    Transform player; //specifying to go to player
     //PlayerHealth playerHealth;
     //EnemyHealth enemyHealth;
-    UnityEngine.AI.NavMeshAgent nav;
+    UnityEngine.AI.NavMeshAgent nav; // nav mesh with Artificial intelligence
 
 
     void Awake ()
     {
-        player = GameObject.FindGameObjectWithTag ("Player").transform;
+        player = GameObject.FindGameObjectWithTag ("Player").transform; //follow the object tagged in that way
         //playerHealth = player.GetComponent <PlayerHealth> ();
         //enemyHealth = GetComponent <EnemyHealth> ();
-        nav = GetComponent <UnityEngine.AI.NavMeshAgent> ();
+        nav = GetComponent <UnityEngine.AI.NavMeshAgent> (); //UnityEnginge.AI.NavMeshAgent is the location of nav mesh which is needed because Nav Mesh Agent is saved with spaces in between
     }
 
 
@@ -22,7 +22,7 @@ public class EnemyMovement : MonoBehaviour
     {
         //if(enemyHealth.currentHealth > 0 && playerHealth.currentHealth > 0)
         //{
-            nav.SetDestination (player.position);
+            nav.SetDestination (player.position); //loop and follow
         //}
         //else
         //{
