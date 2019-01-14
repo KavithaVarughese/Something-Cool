@@ -12,12 +12,12 @@ public class PlayerHealth : MonoBehaviour
     public Image damageImage;
     public AudioClip deathClip;
     public float flashSpeed = 5f;
-    public Color flashColour = new Color(1f, 0f, 0f, 0.1f);
+    public Color flashColour = new Color(1f, 0f, 0f, 0.1f); //most of them directly taken from references
 
 
     Animator anim;
     AudioSource playerAudio;
-    PlayerMovement playerMovement;
+    PlayerMovement playerMovement; //calling our script of player movement
     //PlayerShooting playerShooting;
     bool isDead;
     bool damaged;
@@ -29,7 +29,7 @@ public class PlayerHealth : MonoBehaviour
         playerAudio = GetComponent <AudioSource> ();
         playerMovement = GetComponent <PlayerMovement> ();
         //playerShooting = GetComponentInChildren <PlayerShooting> ();
-        currentHealth = startingHealth;
+        currentHealth = startingHealth; //initial value of health
     }
 
 
@@ -37,13 +37,13 @@ public class PlayerHealth : MonoBehaviour
     {
         if(damaged)
         {
-            damageImage.color = flashColour;
+            damageImage.color = flashColour; //changing the colour to red, initially it was alpha 0
         }
         else
         {
-            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime);
+            damageImage.color = Color.Lerp (damageImage.color, Color.clear, flashSpeed * Time.deltaTime); //this is where we keep the time for the flash value
         }
-        damaged = false;
+        damaged = false; //default
     }
 
 
@@ -59,7 +59,7 @@ public class PlayerHealth : MonoBehaviour
 
         if(currentHealth <= 0 && !isDead)
         {
-            Death ();
+            Death (); //kill him manaually -_-
         }
     }
 
@@ -73,15 +73,15 @@ public class PlayerHealth : MonoBehaviour
         anim.SetTrigger ("Die");
 
         playerAudio.clip = deathClip;
-        playerAudio.Play ();
+        playerAudio.Play (); //play the sound of Death
 
-        playerMovement.enabled = false;
+        playerMovement.enabled = false; //no more movement
         //playerShooting.enabled = false;
     }
 
 
     public void RestartLevel ()
     {
-        SceneManager.LoadScene (0);
+        SceneManager.LoadScene (0); 
     }
 }
