@@ -5,7 +5,8 @@
 
 - [Introduction](#introduction)
   - [Requirements](#requirements)
-  - [Working](#how-it-works)
+  - [Installation](#installation)
+  - [Working](#how-it-works) 
 - [A Peek](#A-Peek)
 
 ---
@@ -20,6 +21,13 @@ https://unity3d.com/learn/tutorials/s/survival-shooter-tutorial
 - `Unity3D (Version.3)`
 - `C#`
 
+## Installation
+Install instructions:
+
+ 1. Clone the repository
+ 2. Open Unity and select File->Open Project->Open Other, then navigate to the cloned repository root folder
+ 3. Choose File->Open Scene and navigate to Assets/Scenes/ and open a scene
+ 
 ## How it works?
 
 #### Objective of the game :
